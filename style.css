@@ -327,3 +327,116 @@ main {
   color: rgb(100, 116, 139);
 }
 /* End product style 2 */
+
+/* Product style 3 */
+.product.style-3 .product-image {
+  width: 210px;
+  opacity: 1;
+  transform-origin: 50% 50% 0px;
+}
+
+.product.style-3 .product-content {
+  padding: 24px;
+  min-width: 360px;
+}
+
+.product.style-3 .product-header {
+  padding-bottom: 24px;
+}
+
+.product.style-3 .product-title {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.product.style-3 .product-price {
+  color: #6b7280;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.product.style-3 .product-status {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.product.style-3 .product-size-list {
+  display: flex;
+  width: max-content;
+}
+
+.product.style-3 .product-size-item {
+  margin-left: 12px;
+  width: 100%;
+  display: inline-block;
+}
+
+.product.style-3 .product-size-item button {
+  border-radius: 22.2222%;
+  width: 38px;
+  height: 38px;
+  background-color: transparent;
+  color: #374151;
+  cursor: pointer;
+}
+
+.product.style-3 .product-size-item.active button {
+  background-color: rgb(17, 24, 39);
+  color: white;
+  font-weight: bold;
+}
+
+.product.style-3 .product-size-item:nth-child(1) {
+  margin-left: 0;
+}
+
+.product.style-3 .button-wrapper {
+  display: flex;
+}
+
+.product.style-3 .button-wrapper button {
+  height: 42px;
+  border-radius: 7.25932% / 19.0476%;
+  text-align: center;
+  font-weight: bold;
+  font-family: "IBM Plex Mono", monospace !important;
+}
+
+.product.style-3 .buy-btn {
+  background-color: rgb(17, 24, 39);
+  border-color: rgb(17, 24, 39);
+  width: 110px;
+  color: white;
+}
+
+.product.style-3 .add-to-bag-btn {
+  background-color: white;
+  border: solid 1px rgb(229, 231, 235); 
+  width: 110px;
+  color: rgb(17, 24, 39);
+  margin-left: 16px;
+}
+
+.product.style-3 .add-to-wishlist-btn {
+  background-color: white;
+  border: solid 1px rgb(229, 231, 235); 
+  width: 42px;
+  height: 42px;
+  color: rgb(229, 231, 235);
+  margin-left: auto;
+  border-radius: 19% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product.style-3 .product-description {
+  margin-top: 24px;
+  font-size: 14px;
+  color: rgb(55, 65, 81);
+}
+/* End product style 3 */
