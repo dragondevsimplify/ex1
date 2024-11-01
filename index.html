@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./reset.css" />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Javascript -->
     <script src="./main.js" defer></script>
     <title>Document</title>
   </head>
@@ -162,6 +165,88 @@
           <div class="tab-item-label">Brutalist</div>
         </li>
       </ul>
+
+      <div class="card none-overflow">
+        <div class="product style-2">
+          <div class="product-image hidden" data-style="1">
+            <img src="./images/prod-1.jpg" alt="product image" />
+          </div>
+          <div class="product-image" data-style="2">
+            <img src="./images/prod-2.jpg" alt="product image" />
+          </div>
+          <div class="product-image hidden" data-style="3">
+            <img src="./images/prod-3.jpg" alt="product image" />
+          </div>
+          <div class="product-image hidden" data-style="4">
+            <img src="./images/prod-4.jpg" alt="product image" />
+          </div>
+          <div class="product-content">
+            <div class="product-header relative hidden" data-style="1">
+              <h4 class="product-title">Classic Utility Jacket</h4>
+              <span class="product-price">$110.00</span>
+              <p class="product-status">In stock</p>
+            </div>
+            <div class="product-header relative" data-style="2">
+              <h4 class="product-title">Kids Jumpsuit</h4>
+              <span class="product-price">$39.00</span>
+              <p class="product-status">In stock</p>
+            </div>
+            <div class="product-header relative hidden" data-style="3">
+              <h4 class="product-title">Dogtooth Style Jacket</h4>
+              <span class="product-price">$350.00</span>
+              <p class="product-status">In stock</p>
+            </div>
+            <div class="product-header relative hidden" data-style="4">
+              <h4 class="product-title">Retro Shoe</h4>
+              <span class="product-price">$89.00</span>
+              <p class="product-status">In stock</p>
+            </div>
+            <ul class="product-size-list">
+              <li class="product-size-item active">
+                <button>XS</button>
+              </li>
+              <li class="product-size-item">
+                <button>S</button>
+              </li>
+              <li class="product-size-item">
+                <button>M</button>
+              </li>
+              <li class="product-size-item">
+                <button>L</button>
+              </li>
+              <li class="product-size-item">
+                <button>XL</button>
+              </li>
+            </ul>
+            <div class="separate"></div>
+            <div class="button-wrapper">
+              <button class="buy-btn">Buy now</button>
+              <button class="add-to-bag-btn">Add to bag</button>
+              <button class="add-to-wishlist-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  color="#d1d5db"
+                  style="transform: none"
+                  transform=""
+                  transform-origin="50% 50% 0"
+                  transformOrigin="50% 50% 0"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <p class="product-description">
+              Free shipping on all continental US orders.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
