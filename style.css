@@ -1,0 +1,70 @@
+:root {
+  --tab-item-inactive: rgb(203 213 225);
+  --tab-item-active: rgb(236 72 153);
+  --tab-item-hover: rgb(148 163 184);
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  padding: 12px;
+}
+
+.tab-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(6rem, 1fr));
+  column-gap: 1.5rem;
+  max-width: 420px;
+  width: 100%;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tab-item.inactive .tab-item-icon svg path:nth-child(1) {
+  fill: var(--tab-item-inactive) !important;
+  stroke: var(--tab-item-inactive) !important;
+}
+
+.tab-item.inactive .tab-item-icon svg path:nth-child(2) {
+  fill: var(--tab-item-inactive) !important;
+  stroke: var(--tab-item-inactive) !important;
+}
+
+.tab-item.inactive .tab-item-label {
+  color: var(--tab-item-inactive) !important;
+}
+
+.tab-item.active .tab-item-icon svg path {
+  fill: var(--tab-item-active) !important;
+  stroke: var(--tab-item-active) !important;
+}
+
+.tab-item.active .tab-item-label {
+  color: var(--tab-item-active) !important;
+}
+
+.tab-item.hover .tab-item-icon svg path {
+  fill: var(--tab-item-hover) !important;
+  stroke: var(--tab-item-hover) !important;
+}
+
+.tab-item.hover .tab-item-label {
+  color: var(--tab-item-hover) !important;
+}
+
+.tab-item-icon {
+  margin-bottom: 24px;
+}
+
+.tab-item-label {
+  font-weight: 600;
+  font-size: 14px;
+}
