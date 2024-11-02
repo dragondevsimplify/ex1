@@ -34,18 +34,11 @@ main {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  color: var(--tab-item-active)
 }
 
 .tab-item.inactive .tab-item-label {
-  color: var(--tab-item-inactive) !important;
-}
-
-.tab-item.active .tab-item-label {
-  color: var(--tab-item-active) !important;
-}
-
-.tab-item::not(.active):hover .tab-item-label {
-  color: var(--tab-item-hover) !important;
+  color: var(--tab-item-inactive); !important;
 }
 
 .tab-item-icon {
@@ -60,10 +53,10 @@ main {
 .card {
   margin-top: 100px;
   border-radius: 2.02703% / 3.93443%;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255);
   --tw-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-    0 8px 10px -6px var(--tw-shadow-color);
+  --tw-shadow-colored: 0 20px 25px -5px,
+    0 8px 10px -6px;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   width: max-content;
@@ -72,6 +65,10 @@ main {
 
 .card.none-overflow {
   overflow: unset;
+}
+
+.card.no-radius {
+  border-radius: 0;
 }
 
 .separate {
@@ -83,39 +80,74 @@ main {
   display: block;
 }
 
+.card.product-style-2 {
+  overflow: unset;
+}
+
+.card.product-style-3,
+.card.product-style-4 {
+  border-radius: 0;
+}
+
 .product {
   display: flex;
 }
 
+@keyframes display-text {
+  from {
+    opacity: 0.5;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.product .product-title,
 .product .product-price,
 .product .product-status {
-  transition: all 2s ease;
+  transform-origin: left;
+  animation: display-text 0.5s ease;
+}
+
+@keyframes display-image {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.product .product-image {
+  animation: display-image 0.5s ease;
 }
 
 /* Product style 1 */
-.product.style-1 .product-image {
+.product-style-1 .product-image {
   width: 210px;
   opacity: 1;
-  transform-origin: 50% 50% 0px;
+  transform-origin: 50% 50% 0;
 }
 
-.product.style-1 .product-content {
+.product-style-1 .product-content {
   padding: 24px;
   min-width: 360px;
 }
 
-.product.style-1 .product-header {
+.product-style-1 .product-header {
   padding-bottom: 24px;
 }
 
-.product.style-1 .product-title {
+.product-style-1 .product-title {
   display: flex;
   font-weight: bold;
   justify-content: space-between;
   font-size: 18px;
 }
 
-.product.style-1 .product-price {
+.product-style-1 .product-price {
   color: #6b7280;
   font-weight: bold;
   position: absolute;
@@ -123,23 +155,23 @@ main {
   right: 0;
 }
 
-.product.style-1 .product-status {
+.product-style-1 .product-status {
   margin-top: 8px;
   font-size: 14px;
 }
 
-.product.style-1 .product-size-list {
+.product-style-1 .product-size-list {
   display: flex;
   width: max-content;
 }
 
-.product.style-1 .product-size-item {
+.product-style-1 .product-size-item {
   margin-left: 12px;
   width: 100%;
   display: inline-block;
 }
 
-.product.style-1 .product-size-item button {
+.product-style-1 .product-size-item button {
   border-radius: 22.2222%;
   width: 38px;
   height: 38px;
@@ -148,21 +180,21 @@ main {
   cursor: pointer;
 }
 
-.product.style-1 .product-size-item.active button {
+.product-style-1 .product-size-item.active button {
   background-color: rgb(17, 24, 39);
   color: white;
   font-weight: bold;
 }
 
-.product.style-1 .product-size-item:nth-child(1) {
+.product-style-1 .product-size-item:nth-child(1) {
   margin-left: 0;
 }
 
-.product.style-1 .button-wrapper {
+.product-style-1 .button-wrapper {
   display: flex;
 }
 
-.product.style-1 .button-wrapper button {
+.product-style-1 .button-wrapper button {
   height: 42px;
   border-radius: 7.25932% / 19.0476%;
   text-align: center;
@@ -170,14 +202,14 @@ main {
   font-family: "IBM Plex Mono", monospace !important;
 }
 
-.product.style-1 .buy-btn {
+.product-style-1 .buy-btn {
   background-color: rgb(17, 24, 39);
   border-color: rgb(17, 24, 39);
   width: 110px;
   color: white;
 }
 
-.product.style-1 .add-to-bag-btn {
+.product-style-1 .add-to-bag-btn {
   background-color: white;
   border: solid 1px rgb(229, 231, 235); 
   width: 110px;
@@ -185,7 +217,7 @@ main {
   margin-left: 16px;
 }
 
-.product.style-1 .add-to-wishlist-btn {
+.product-style-1 .add-to-wishlist-btn {
   background-color: white;
   border: solid 1px rgb(229, 231, 235); 
   width: 42px;
@@ -198,7 +230,7 @@ main {
   align-items: center;
 }
 
-.product.style-1 .product-description {
+.product-style-1 .product-description {
   margin-top: 24px;
   font-size: 14px;
   color: rgb(55, 65, 81);
@@ -206,7 +238,7 @@ main {
 /* End product style 1 */
 
 /* Product style 2 */
-.product.style-2 .product-image {
+.product-style-2 .product-image {
   width: 210px;
   opacity: 1;
   scale: 1.05;
@@ -214,23 +246,23 @@ main {
   overflow: hidden;
 }
 
-.product.style-2 .product-content {
+.product-style-2 .product-content {
   padding: 24px;
   min-width: 370px;
 }
 
-.product.style-2 .product-header {
+.product-style-2 .product-header {
   padding-bottom: 24px;
 }
 
-.product.style-2 .product-title {
+.product-style-2 .product-title {
   display: flex;
   font-weight: bold;
   justify-content: space-between;
   font-size: 18px;
 }
 
-.product.style-2 .product-price {
+.product-style-2 .product-price {
   color: rgb(124, 58, 237);
   font-weight: bold;
   font-size: 30px;
@@ -238,7 +270,7 @@ main {
   display: block;
 }
 
-.product.style-2 .product-status {
+.product-style-2 .product-status {
   font-size: 14px;
   font-weight: bold;
   position: absolute;
@@ -247,18 +279,18 @@ main {
   color: rgb(156, 163, 175);
 }
 
-.product.style-2 .product-size-list {
+.product-style-2 .product-size-list {
   display: flex;
   width: max-content;
 }
 
-.product.style-2 .product-size-item {
+.product-style-2 .product-size-item {
   margin-left: 12px;
   width: 100%;
   display: inline-block;
 }
 
-.product.style-2 .product-size-item button {
+.product-style-2 .product-size-item button {
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -268,21 +300,21 @@ main {
   font-weight: bold;
 }
 
-.product.style-2 .product-size-item.active button {
+.product-style-2 .product-size-item.active button {
   background-color: rgba(124, 58, 237, 1);
   color: white;
   font-weight: bold;
 }
 
-.product.style-2 .product-size-item:nth-child(1) {
+.product-style-2 .product-size-item:nth-child(1) {
   margin-left: 0;
 }
 
-.product.style-2 .button-wrapper {
+.product-style-2 .button-wrapper {
   display: flex;
 }
 
-.product.style-2 .button-wrapper button {
+.product-style-2 .button-wrapper button {
   height: 46px;
   border-radius: 20% / 50%;
   text-align: center;
@@ -290,13 +322,13 @@ main {
   font-family: "IBM Plex Mono", monospace !important;
 }
 
-.product.style-2 .buy-btn {
+.product-style-2 .buy-btn {
   background-color: rgba(124, 58, 237, 1);
   width: 110px;
   color: white;
 }
 
-.product.style-2 .add-to-bag-btn {
+.product-style-2 .add-to-bag-btn {
   background-color: white;
   border: solid 1px rgb(229, 231, 235); 
   width: 120px;
@@ -304,7 +336,7 @@ main {
   margin-left: 16px;
 }
 
-.product.style-2 .add-to-wishlist-btn {
+.product-style-2 .add-to-wishlist-btn {
   background-color: rgb(245, 243, 255);
   width: 46px;
   height: 46px;
@@ -316,12 +348,12 @@ main {
   align-items: center;
 }
 
-.product.style-2 .add-to-wishlist-btn svg,
-.product.style-2 .add-to-wishlist-btn svg path {
+.product-style-2 .add-to-wishlist-btn svg,
+.product-style-2 .add-to-wishlist-btn svg path {
   fill: rgb(124, 58, 237);
 }
 
-.product.style-2 .product-description {
+.product-style-2 .product-description {
   margin-top: 24px;
   font-size: 14px;
   color: rgb(100, 116, 139);
@@ -329,114 +361,313 @@ main {
 /* End product style 2 */
 
 /* Product style 3 */
-.product.style-3 .product-image {
+.product-style-3 {
+  padding: 6px;
+}
+
+.product-style-3 .product-image {
   width: 210px;
+  height: calc(305px - 12px); /* height của content trừ đi padding của <card> -> <product> */
   opacity: 1;
-  transform-origin: 50% 50% 0px;
+  transform-origin: 50% 50% 0;
 }
 
-.product.style-3 .product-content {
+.product-style-3 .product-image img {
+  object-fit: cover;
+}
+
+.product-style-3 .product-content {
   padding: 24px;
-  min-width: 360px;
+  min-width: 370px;
 }
 
-.product.style-3 .product-header {
+.product-style-3 .product-header {
   padding-bottom: 24px;
-}
-
-.product.style-3 .product-title {
   display: flex;
-  font-weight: bold;
+  flex-direction: column;
+}
+
+.product-style-3 .product-title {
+  display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 24px;
+  font-family: "Source Serif 4", serif;
 }
 
-.product.style-3 .product-price {
+.product-style-3 .product-price {
   color: #6b7280;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  right: 0;
+  font-weight: 500;
+  margin-top: 16px;
 }
 
-.product.style-3 .product-status {
+.product-style-3 .product-status {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  text-transform: uppercase;
+  color: rgb(107 114 128);
 }
 
-.product.style-3 .product-size-list {
+.product-style-3 .product-size-list {
   display: flex;
   width: max-content;
 }
 
-.product.style-3 .product-size-item {
+.product-style-3 .product-size-item {
   margin-left: 12px;
   width: 100%;
   display: inline-block;
 }
 
-.product.style-3 .product-size-item button {
-  border-radius: 22.2222%;
-  width: 38px;
-  height: 38px;
+.product-style-3 .product-size-item button {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
   background-color: transparent;
-  color: #374151;
+  color: #49576c;
   cursor: pointer;
+  font-weight: 600;
 }
 
-.product.style-3 .product-size-item.active button {
-  background-color: rgb(17, 24, 39);
-  color: white;
+.product-style-3 .product-size-item.active button {
+  background-color: #f3f4f6;
+  color: rgb(17, 24, 39);
   font-weight: bold;
 }
 
-.product.style-3 .product-size-item:nth-child(1) {
+.product-style-3 .product-size-item:nth-child(1) {
   margin-left: 0;
 }
 
-.product.style-3 .button-wrapper {
+.product-style-3 .button-wrapper {
   display: flex;
 }
 
-.product.style-3 .button-wrapper button {
-  height: 42px;
-  border-radius: 7.25932% / 19.0476%;
+.product-style-3 .button-wrapper button {
+  height: 46px;
   text-align: center;
   font-weight: bold;
-  font-family: "IBM Plex Mono", monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.product.style-3 .buy-btn {
+.product-style-3 .buy-btn {
   background-color: rgb(17, 24, 39);
   border-color: rgb(17, 24, 39);
-  width: 110px;
+  width: 122px;
   color: white;
 }
 
-.product.style-3 .add-to-bag-btn {
+.product-style-3 .add-to-bag-btn {
   background-color: white;
   border: solid 1px rgb(229, 231, 235); 
-  width: 110px;
+  width: 122px;
   color: rgb(17, 24, 39);
   margin-left: 16px;
 }
 
-.product.style-3 .add-to-wishlist-btn {
+.product-style-3 .add-to-wishlist-btn {
   background-color: white;
   border: solid 1px rgb(229, 231, 235); 
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   color: rgb(229, 231, 235);
   margin-left: auto;
-  border-radius: 19% !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.product.style-3 .product-description {
+.product-style-3 .product-description {
   margin-top: 24px;
   font-size: 14px;
   color: rgb(55, 65, 81);
+  opacity: 0.8;
 }
 /* End product style 3 */
+
+/* Product style 4 */
+.product-style-4 .product {
+  position: relative;
+  padding: 24px 24px 17px;
+  z-index: 1;
+}
+
+.product-style-4 .separate {
+  display: none;
+}
+
+.product-style-4 .product::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 112px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.product-style-4 .product-image {
+  width: 184px;
+  height: 224px;
+  opacity: 1;
+  transform-origin: 50% 50% 0;
+  position: relative;
+  z-index: 1;
+}
+
+.product-style-4 .product-image::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: #2dd4bf;
+  z-index: -1;
+}
+
+.product-style-4 .product-image img {
+  object-fit: cover;
+}
+
+.product-style-4 .product-content {
+  padding: 0 0 0 32px;
+  min-width: 360px;
+}
+
+.product-style-4 .product-header {
+  padding-bottom: 56px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-style-4 .product-title {
+  width: 100%;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "IBM Plex Mono", monospace;
+  color: white;
+}
+
+.product-style-4 .product-price {
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  margin-top: 18px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.product-style-4 .product-status {
+  display: inline-block;
+  margin-top: 18px;
+  margin-left: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #2dd4bf;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.product-style-4 .product-size-list {
+  display: flex;
+  width: max-content;
+}
+
+.product-style-4 .product-size-item {
+  margin-left: 12px;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.product-style-4 .product-size-item button {
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+.product-style-4 .product-size-item.active button {
+  background-color: black;
+  color: white;
+}
+
+.product-style-4 .product-size-item.active::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-color: #2dd4bf;
+  z-index: -1;
+}
+
+.product-style-4 .product-size-item:nth-child(1) {
+  margin-left: 0;
+}
+
+.product-style-4 .button-wrapper {
+  display: flex;
+  margin-top: 24px;
+}
+
+.product-style-4 .button-wrapper button {
+  height: 46px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.product-style-4 .buy-btn {
+  background-color: #2dd4bf;
+  border: solid 2px black;
+  width: 120px;
+  color: black;
+}
+
+.product-style-4 .add-to-bag-btn {
+  background-color: white;
+  border: solid 1px rgb(229, 231, 235);
+  width: 146px;
+  color: rgb(17, 24, 39);
+  margin-left: 16px;
+}
+
+.product-style-4 .add-to-wishlist-btn {
+  background-color: transparent;
+  width: 30px;
+  height: 46px;
+  color: black;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-style-4 .add-to-wishlist-btn svg,
+.product-style-4 .add-to-wishlist-btn svg path {
+  fill: black;
+}
+
+.product-style-4 .product-description {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: rgb(55, 65, 81);
+  opacity: 0.9;
+  font-family: "IBM Plex Mono", monospace;
+}
+/* End product style 4 */
